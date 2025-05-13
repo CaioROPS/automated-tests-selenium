@@ -8,6 +8,7 @@ random_number = random.randint(1, 1000)
 first_name = "Test" + str(random_number)
 last_name = "User" + str(random_number)
 username = "TestUser" + str(random_number)
+id = str(random_number)
 
 def test_create_user(login):
     wait = WebDriverWait(login, 10)
@@ -19,8 +20,11 @@ def test_create_user(login):
     login.find_element(By.NAME, "lastName").send_keys(last_name)
 
     wait.until(EC.element_to_be_clickable((By.XPATH, "//span[contains(@class, 'oxd-switch-input')]"))).click()
-
+    
     login.find_element(By.XPATH, "(//input[contains(@class, 'oxd-input oxd-input--active')])[6]").send_keys(username)
+    
+    login.find_element(By.XPATH, "(//input[contains(@class, 'oxd-input oxd-input--active')])[5]").send_keys(id)
+
     login.find_element(By.XPATH, "(//input[@type='password'])[1]").send_keys("Teste123Teste456")
     login.find_element(By.XPATH, "(//input[@type='password'])[2]").send_keys("Teste123Teste456")
 
