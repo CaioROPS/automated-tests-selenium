@@ -39,7 +39,9 @@ cd automated-tests-robot
 --
 
 ## Como Instalar
-Abra seu cmd
+Abra o cmd: (Windowns + R) e digite cmd, aperte em OK
+pip --version (Para consultar versão do pip)
+
 pip install robotframework (Para instalar o Robot)
 
 pip install robotframework-seleniumlibrary (Para instalar o selenium library)
