@@ -1,4 +1,5 @@
 import pytest
+import random
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
@@ -19,3 +20,13 @@ def login():
 
     yield driver
     driver.quit()
+
+@pytest.fixture()
+def user_data():
+    random_number = str(random.randint(1000, 9999))
+    return {
+        "first_name": "Test",
+        "last_name": "User",
+        "username": "Automation",
+        "user_id": f"id{random_number}"
+    }
