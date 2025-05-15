@@ -36,8 +36,7 @@ def test_create_user(login, user_data):
     wait.until(EC.element_to_be_clickable((By.XPATH, "(//div[@class= 'oxd-select-text oxd-select-text--active'])[2]"))).click()
     wait.until(EC.element_to_be_clickable((By.XPATH, "(//div[@class= 'oxd-select-option'])[2]"))).click()
 
-    time.sleep(2)
-    wait.until(EC.presence_of_element_located((By.XPATH, "(//input[@class= 'oxd-input oxd-input--active'])[2]"))).send_keys(user_data["username"])
+    WebDriverWait(login, 5).until(EC.presence_of_element_located((By.XPATH, "(//input[@class= 'oxd-input oxd-input--active'])[2]"))).send_keys(user_data["username"])
     login.find_element(By.XPATH, "(//input[(@type= 'password')])[1]").send_keys("Teste123Teste456")
     login.find_element(By.XPATH, "(//input[(@type= 'password')])[2]").send_keys("Teste123Teste456")
 
@@ -59,8 +58,7 @@ def test_delete_user(login, user_data):
     time.sleep(2)
     wait.until(EC.element_to_be_clickable((By.XPATH, "//button[@type='button']//i[@class='oxd-icon bi-trash']"))).click()
 
-    time.sleep(2)
-    wait.until(EC.element_to_be_clickable((By.XPATH, "//i[@class= 'oxd-icon bi-trash oxd-button-icon']"))).click()
+    WebDriverWait(login, 5).until(EC.element_to_be_clickable((By.XPATH, "//i[@class= 'oxd-icon bi-trash oxd-button-icon']"))).click()
 
     toast = wait.until(EC.visibility_of_element_located((By.CSS_SELECTOR, ".oxd-text--toast-title")))
     assert "Success" in toast.text, f"Mensagem esperada não encontrada. Texto atual: {toast.text}" 
@@ -72,14 +70,12 @@ def test_delete_employee(login):
     
     wait.until(EC.element_to_be_clickable((By.XPATH, "(//li[@class= 'oxd-main-menu-item-wrapper'])[2]"))).click()
     wait.until(EC.element_to_be_clickable((By.XPATH, "(//input[@placeholder= 'Type for hints...'])[1]"))).send_keys("Test User")
-    time.sleep(2)
-    wait.until(EC.element_to_be_clickable((By.XPATH, "(//div[@class= 'oxd-autocomplete-option'])[1]"))).click()
+    WebDriverWait(login, 5).until(EC.element_to_be_clickable((By.XPATH, "(//div[@class= 'oxd-autocomplete-option'])[1]"))).click()
     wait.until(EC.element_to_be_clickable((By.XPATH, "//button[@type='submit']"))).click()
 
     wait.until(EC.element_to_be_clickable((By.XPATH, "//button[@type='button']//i[@class='oxd-icon bi-trash']"))).click()
 
-    time.sleep(2)
-    wait.until(EC.element_to_be_clickable((By.XPATH, "//i[@class= 'oxd-icon bi-trash oxd-button-icon']"))).click()
+    WebDriverWait(login, 5).until(EC.element_to_be_clickable((By.XPATH, "//i[@class= 'oxd-icon bi-trash oxd-button-icon']"))).click()
 
     toast = wait.until(EC.visibility_of_element_located((By.CSS_SELECTOR, ".oxd-text--toast-title")))
     assert "Success" in toast.text, f"Mensagem esperada não encontrada. Texto atual: {toast.text}" 
