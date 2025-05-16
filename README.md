@@ -1,4 +1,4 @@
-# Robot com Selenium (Python + Pytest)
+# Selenium (Python + Pytest)
 Este projeto foi desenvolvido como um desafio para demonstrar habilidades em automação de testes utilizando Selenium WebDriver com Python, integrando o Pytest como framework de execução.
 
 ## Índice
