@@ -31,10 +31,10 @@ Siga os passos abaixo para baixar e configurar o projeto:
 
 ```bash
 # Clone o repositório
-git clone https://github.com/CaioROPS/automated-tests-robot.git
+git clone https://github.com/CaioROPS/automated-tests-selenium.git
 
 # Acesse o diretório do projeto
-cd automated-tests-robot
+cd automated-tests-selenium
 
 --
 
@@ -54,14 +54,24 @@ Para executar os testes:
 # 1. Abra o Terminal
 pytest
 
-## Estrutura do Projeto 
-automated-tests-robot/
-├── Tests/
-│   ├── conftest.py            # Fixture de login usada em múltiplos testes
-│   └── create_user.py         # Teste que cria um usuário ou realiza validação
-├── .gitignore                 # Arquivos ignorados pelo Git
-├── .gitattributes             # Configurações de formatação Git
-└── README.md                  # Documentação do projeto
+## Estrutura do Projeto
+automated-tests-selenium/
+│
+├── pages/                     
+│   ├── employeePage.py
+│   ├── loginPage.py
+│   ├── userPage.py
+│
+├── Tests/                                 
+│   └── e2e/                               
+│       ├── validating_deletion.py         
+│       ├── validating_login.py             
+│       └── validating_registration.py      
+│
+├── chromedriver.exe                        
+├── conftest.py                           
+├── README.md                               
+└── .gitignore                              
 
 ##Contato 
 Caso tenha dúvidas ou precise de suporte, entre em contato:
