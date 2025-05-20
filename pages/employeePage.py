@@ -19,7 +19,6 @@ class CreateEmployeePage:
 
         toast = wait.until(EC.visibility_of_element_located((By.CSS_SELECTOR, ".oxd-text--toast-title")))
         assert "Success" in toast.text, f"Mensagem esperada não encontrada. Texto atual: {toast.text}"
-
         time.sleep(2)
 
 class DeleteEmployeePage:
